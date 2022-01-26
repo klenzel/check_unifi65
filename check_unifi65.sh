@@ -161,8 +161,7 @@ strCurlCommand="${strCurlBinary} --tlsv1 --silent --cookie ${strCookieFile} --co
 strLogOutAndCleanUp="${strCurlCommand} $strBaseURL/logout > /dev/null 2>&1 ; rm -f ${strCookieFile}"
 
 #Anmelden am Controller
-strLoginStatus=$(${strCurlCommand} -X POST -H "Content-Type: application/json" --referer ${strBaseURL}/login --cookie ${strCookieFile} --cookie-jar ${strCookieFile} --insecure -d '{"username": "$strUsername", "password": "$strPassword"}' ${strBaseURL}/api/login | ${strJQBinary} '.meta.rc')
-
+strLoginStatus=$(${strCurlCommand} -X POST -H "Content-Type: application/json" --referer ${strBaseURL}/login --cookie ${strCookieFile} --cookie-jar ${strCookieFile} --insecure -d "{\"username\": \"$strUsername\", \"password\": \"$strPassword\"}" ${strBaseURL}/api/login | ${strJQBinary} '.meta.rc')
 
 if [ "$strLoginStatus" != "\"ok\"" ] ; then
   echo "Unknown: Anmeldung am Unifi-Controller fehlgeschlagen"
