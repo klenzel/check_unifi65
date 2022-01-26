@@ -14,10 +14,10 @@ Kontakt: daniel@klenzel.de
 apt-get install jq curl
 
 2. Plugin herunterladen und speichern:
-wget https://raw.githubusercontent.com/klenzel/check_unifi45/master/check_unifi45.sh -O /usr/lib/nagios/plugins/check_unifi45.sh
+wget https://raw.githubusercontent.com/klenzel/check_unifi65/master/check_unifi65.sh -O /usr/lib/nagios/plugins/check_unifi65.sh
 
 3. Ausführung ermöglichen:
-chmod + /usr/lib/nagios/plugins/check_unifi45.sh
+chmod + /usr/lib/nagios/plugins/check_unifi65.sh
 
 4. Nagios/Icinga-Konfiguration anpassen
 => siehe examples.txt
